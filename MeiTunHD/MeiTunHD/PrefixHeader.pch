@@ -1,0 +1,65 @@
+//
+//  PrefixHeader.pch
+//  MeiTunHD
+//
+//  Created by will on 2017/5/17.
+//  Copyright © 2017年 will wang. All rights reserved.
+//
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/**
+ * 头文件
+ */
+//xcode可以执行多种源代码(.m .mm .cpp .c),但是如果.cpp和.c引用到oc相关的内容,就会报错
+#ifdef __OBJC__  //在该宏中引用的头文件不会被oc以外的文件引用到
+
+#import <UIKit/UIKit.h>
+
+//分类
+#import "UIView+VVCategory.h"
+#import "UIBarButtonItem+VVCategory.h"
+
+//第三方类库
+#import <YYModel.h>
+#import <Masonry.h>
+#import <UIImageView+WebCache.h>
+#import "DPAPI.h"
+#import "MJRefresh.h"
+#import <FMDB.h>
+
+//公共类
+#import "VVCommon.h"
+#import "VVDataBase.h"
+
+#endif
+
+//屏幕真实宽高宏
+#define VVRealScreenWidth (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) ? MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) : MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
+
+#define VVRealScreenHeight (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation) ? MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) : MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
+
+/**
+ * 宏定义
+ */
+
+//颜色宏
+#define VVColor(r,g,b) [UIColor colorWithRed:(r)/255.0  green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+//打印宏 根据Debug和Release模式区分  测试是执行打印,发布时相当于注释
+#ifdef DEBUG
+#define VVLog(fmt, ...)  fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String]);
+#else
+#define VVLog(...)
+#endif
+
+//通知宏
+#define VVNoteCenter [NSNotificationCenter defaultCenter]
+
+
+#endif /* PrefixHeader_pch */

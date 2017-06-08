@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VVDistrictViewController">
+            <connections>
+                <outlet property="topView" destination="imh-1Q-hp8" id="UfJ-qo-oyp"/>
+                <outlet property="view" destination="iN0-l3-epB" id="NEn-Ba-7Lz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="413"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imh-1Q-hp8">
+                    <rect key="frame" x="0.0" y="0.0" width="386" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDB-5W-95Y">
+                            <rect key="frame" x="0.0" y="0.0" width="386" height="40"/>
+                            <state key="normal" title="切换城市" image="btn_changeCity">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clickChangeCityBtn:" destination="-1" eventType="touchUpInside" id="aNN-ON-x1h"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_filter_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="LKb-vV-TDg">
+                            <rect key="frame" x="354" y="12" width="16" height="16"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="iDB-5W-95Y" secondAttribute="bottom" id="4XH-7A-XLb"/>
+                        <constraint firstItem="LKb-vV-TDg" firstAttribute="centerY" secondItem="imh-1Q-hp8" secondAttribute="centerY" id="9In-Gb-638"/>
+                        <constraint firstAttribute="trailing" secondItem="iDB-5W-95Y" secondAttribute="trailing" id="JcH-3r-YZ1"/>
+                        <constraint firstItem="iDB-5W-95Y" firstAttribute="top" secondItem="imh-1Q-hp8" secondAttribute="top" id="KQ5-r3-7OM"/>
+                        <constraint firstAttribute="trailing" secondItem="LKb-vV-TDg" secondAttribute="trailing" constant="16" id="O0x-ur-wvX"/>
+                        <constraint firstAttribute="height" constant="40" id="Ohw-bS-fWj"/>
+                        <constraint firstItem="iDB-5W-95Y" firstAttribute="leading" secondItem="imh-1Q-hp8" secondAttribute="leading" id="g37-i7-Awn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="imh-1Q-hp8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9mP-9c-yjL"/>
+                <constraint firstItem="imh-1Q-hp8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bQP-Ef-KkT"/>
+                <constraint firstAttribute="trailing" secondItem="imh-1Q-hp8" secondAttribute="trailing" id="m8l-az-KyD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="31" y="-75.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_changeCity" width="30" height="30"/>
+        <image name="icon_filter_arrow" width="16" height="16"/>
+    </resources>
+</document>
